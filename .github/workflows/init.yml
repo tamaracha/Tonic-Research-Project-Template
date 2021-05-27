@@ -1,10 +1,9 @@
 name: Initialize project
-on:
-  create:
-    branches: [main]
+on: create
 jobs:
   build:
     name: "Remove unnecessary files"
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
       - name: Check out the code
